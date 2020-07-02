@@ -22,6 +22,7 @@ public class NarutoAttack : MonoBehaviour
                 Attack();
                 
                 nextAttackTime = Time.time + 1f / attackRate;
+
             }
             if (Input.GetKeyDown(KeyCode.A))
             {

@@ -9,16 +9,21 @@ public class GokuHP : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     public Animator animator;
-  
+    public GokuHealthBarScript healthBar;
+    
 
 
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        
     }
     public void TakeDamage(int damage) 
     {
     currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+        
         animator.SetTrigger("Hurt");
             if (currentHealth <= 0)
         {
