@@ -10,7 +10,7 @@ public class MovementScriptNaruto : MonoBehaviour {
     private bool facingRight = true;
     public float jumpForce;
     
-    private bool isGrounded;
+    public bool isGrounded;
     public Transform groundCheck;
     public float checkradius;
     public LayerMask whatIsGround;
@@ -70,10 +70,20 @@ public class MovementScriptNaruto : MonoBehaviour {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkradius, whatIsGround);
         if (isGrounded)
         {
-            GetComponent<Animator>().SetBool("IsRunningNaruto", xInput != 0);
             GetComponent<Animator>().SetBool("IsJumping", false);
             GetComponent<Animator>().SetBool("IsFalling", false);
+
+            if (xInput != 0)
+            {
+                GetComponent<Animator>().SetBool("IsRunningNaruto", true);
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("IsRunningNaruto", false);
+            }
+
         }
+
 
         rb2d.velocity = new Vector2(xInput * speed, rb2d.velocity.y);
 
