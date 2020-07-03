@@ -8,8 +8,8 @@ public class NarutoAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    public int attackDamage = 5;
-    public int attackDamage2 = 7;
+    public int attackDamage = 3;
+    public int attackDamage2 = 5;
     public float attackRate = 3f;
     float nextAttackTime = 0f;
 
